@@ -8,7 +8,14 @@ const map = (array, callback) => {
 };
 
 const filter = (array, callback) => {
-    return array.filter(ar => callback(ar));
+    // return array.filter(ar => callback(ar));
+    let newArray = [];
+    for(let ar of array) {
+        if(callback(ar)) {
+            newArray = [...newArray, ar];
+        }
+    }
+    return newArray;
 };
 
 const findIndex = (array, callback) => {

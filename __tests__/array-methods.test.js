@@ -1,7 +1,7 @@
 const { map, filter, findIndex } = require('../array-methods');
 
 describe('array methods', () => {
-    it.only('map takes an array and a callback and creates a new array with the return value of each called callback', () => {
+    it('map takes an array and a callback and creates a new array with the return value of each called callback', () => {
 
         const array = [1, 2, 3];
         const callback = (item) => item * 2
@@ -10,7 +10,7 @@ describe('array methods', () => {
 
     });
 
-    it('filter takes an array and callback and creates a new array with all the items whose callback returned true or truthy', () => {
+    it.only('filter takes an array and callback and creates a new array with all the items whose callback returned true or truthy', () => {
 
         const array = ['snake', 'turtle', 'skunk', 'sea lion', 'giraffe'];
         const callback = (item) => item.startsWith('s');
