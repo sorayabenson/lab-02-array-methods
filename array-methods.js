@@ -1,29 +1,31 @@
 const map = (array, callback) => {
-    // return array.map(ar => callback(ar));
     let newArray = [];
-    for(let ar of array) {
-       newArray = [...newArray, callback(ar)];
-    }
+    for(let ar of array) newArray = [...newArray, callback(ar)];
+    
     return newArray;
 };
 
 const filter = (array, callback) => {
-    // return array.filter(ar => callback(ar));
     let newArray = [];
     for(let ar of array) {
-        if(callback(ar)) {
-            newArray = [...newArray, ar];
-        }
+        if(callback(ar)) newArray = [...newArray, ar];
     }
     return newArray;
 };
 
 const findIndex = (array, callback) => {
-    return array.findIndex(ar => callback(ar));
+    for(let i = 0; i < array.length; i++) {
+        if (callback(array[i])) return i;
+    }
 };
+
+const reduce = () => {
+
+}
 
 module.exports = {
     map,
     filter,
-    findIndex
+    findIndex,
+    reduce
 };
