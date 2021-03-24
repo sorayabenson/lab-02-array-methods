@@ -1,5 +1,4 @@
 const map = (array, callback) => {
-    // return array.map(ar => callback(ar));
     let newArray = [];
     for(let ar of array) newArray = [...newArray, callback(ar)];
     
@@ -21,7 +20,6 @@ const findIndex = (array, callback) => {
 };
 
 const reduce = (array, callback, initialValue) => {
-
     let acc = initialValue
     for(let ar of array) acc = callback(acc, ar);
     
@@ -29,9 +27,10 @@ const reduce = (array, callback, initialValue) => {
 }
 
 const every = (array, callback) => {
-    for(let i = 0; i < array.length; i++) {
-        if (!callback(array[i])) return false;
+    for(let ar of array) {
+        if (!callback(ar)) return false;
     }
+
     return true;
 }
 
