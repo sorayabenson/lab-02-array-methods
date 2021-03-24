@@ -1,4 +1,5 @@
 const map = (array, callback) => {
+    // return array.map(ar => callback(ar));
     let newArray = [];
     for(let ar of array) newArray = [...newArray, callback(ar)];
     
@@ -19,8 +20,13 @@ const findIndex = (array, callback) => {
     }
 };
 
-const reduce = () => {
+const reduce = (array, callback, initialValue) => {
 
+    let acc = initialValue
+    for(let ar of array) {
+        acc = callback(acc, ar);
+    }
+    return acc;
 }
 
 module.exports = {

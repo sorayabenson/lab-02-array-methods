@@ -11,7 +11,7 @@
 //- 3. findIndex(arr, callback)
     - - Takes an array and callback (item => {}) and returns the index of the first item whose callback returns true or truthy.
 
-- 4. reduce(arr, callback [, initialValue])
+//- 4. reduce(arr, callback [, initialValue])
     - Takes an array and callback ((acc, item) => {}) and an optional second initialValue parameter that is the initial value of the accumulator. The return value is passed as the accumulator argument of the next function call.
 
 - 5. every(arr, callback)

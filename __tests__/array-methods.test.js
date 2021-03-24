@@ -28,13 +28,23 @@ describe('array methods', () => {
 
     });
 
-    it.only('reduce takes an array, a callback, and an optional second initialValue parameter that is the initial value of the accumulator. The return value is passed as the accumulator argument of the next function call', () => {
+    it('reduce takes an array, a callback, and an optional second initialValue parameter that is the initial value of the accumulator. The return value is passed as the accumulator argument of the next function call', () => {
 
         const array = [1, 2, 3];
         const callback = (acc, item) => item * acc
         let initialValue = 2;
 
-        expect(reduce(array, callback, initialValue)).toEqual([2, 8, 16])
+        expect(reduce(array, callback, initialValue)).toEqual(12)
+
+    });
+
+    it('reduce takes an array, a callback, and an optional second initialValue parameter that is the initial value of the accumulator. The return value is passed as the accumulator argument of the next function call', () => {
+
+        const array = [1, 2, 3];
+        const callback = (acc, item) => item + acc
+        let initialValue = 2;
+
+        expect(reduce(array, callback, initialValue)).toEqual(8)
 
     });
 
