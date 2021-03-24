@@ -1,4 +1,4 @@
-const { map, filter, findIndex, reduce } = require('../array-methods');
+const { map, filter, findIndex, reduce, every } = require('../array-methods');
 
 describe('array methods', () => {
     it('map takes an array and a callback and creates a new array with the return value of each called callback', () => {
@@ -45,6 +45,24 @@ describe('array methods', () => {
         let initialValue = 2;
 
         expect(reduce(array, callback, initialValue)).toEqual(8)
+
+    });
+
+    it('every takes an array and callback and returns an overall true if all callbacks return true or truthy', () => {
+
+        const array = ['snake', 'turtle', 'skunk', 'sea lion', 'giraffe', 'tiger'];
+        const callback = (item) => item.startsWith('t');
+
+        expect(every(array, callback)).toBeFalsy();
+
+    });
+
+    it('every takes an array and callback and returns an overall true if all callbacks return true or truthy', () => {
+
+        const array = ['turtle', 'tiger', 'trantula'];
+        const callback = (item) => item.startsWith('t');
+
+        expect(every(array, callback)).toBeTruthy();
 
     });
 
